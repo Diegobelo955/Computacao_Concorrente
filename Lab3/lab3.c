@@ -65,10 +65,6 @@ int main (int argc, char** argv) {
     float finalPi;
     double inicio, fim, delta,ganhoDesempenho, tempoConcorrente = 0, tempoSequencial = 0;
     
-    
-
-
-
 //checar argumentos e receber parametros
 
 if(argc < 3) {
@@ -108,8 +104,6 @@ for(long long int i = 0; i < dim; i++) {
 finalPi = 4*seqPI;
 valorComparado = M_PI - finalPi;
 
-
-
 printf("Valor de pi calculado sequencialmente: %.14f\n", finalPi);
 
 printf("Diferenca entre o PI da funcao(seq) x o PI da biblioteca math.c : %f\n", valorComparado);
@@ -122,7 +116,6 @@ tempoSequencial = delta;
 
 printf("Tempo gasto para calcular pi sequencialmente: %f\n", tempoSequencial);
 printf("------------------------------------------------------------------------------------------\n\n");
-
 
 
 GET_TIME(inicio)
@@ -144,7 +137,6 @@ for(long long int i = 0; i < nthreads; i++) {
     }
 
 }
-
 
 //aguarda o termino das threads
 
@@ -168,6 +160,7 @@ printf("Diferenca entre o PI da funcao(conc) x o PI da biblioteca math.c : %f\n"
 //liberacao da memoria alocada
 
 free(tid);
+free(array);
 
 GET_TIME(fim);
 
@@ -183,12 +176,5 @@ ganhoDesempenho = tempoSequencial/tempoConcorrente;
 
 printf("Ganho de desempenho: %f\n\n", ganhoDesempenho);
 
-
-
-
-
 return 0;
-
-
-
 }
