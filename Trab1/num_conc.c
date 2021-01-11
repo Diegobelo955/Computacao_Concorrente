@@ -202,6 +202,9 @@ printf("\nThe Concorrency Integral is: %lf\n",integral_conc);
 printf("\nTime_Seq = %lfs\n", time1);
 printf("\nTime_Conc = %lfs\n", time2);
 
+/*-------------------------------------------------Print performance Gain--------------------------------------- */
+
+printf("\nThe Performance Gain Are: %lf*100\n",time1/time2);
 
 return 0;
 
